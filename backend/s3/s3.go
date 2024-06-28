@@ -1415,8 +1415,8 @@ func init() {
 				Help:     "Magalu BR Southeast 1 endpoint",
 				Provider: "Magalu",
 			}, {
-				Value:    "br-se1.magaluobjects.com",
-				Help:     "Magalu BR Northest 1 endpoint",
+				Value:    "br-ne1.magaluobjects.com",
+				Help:     "Magalu BR Northeast 1 endpoint",
 				Provider: "Magalu",
 			}},
 		}, {
@@ -4065,7 +4065,7 @@ func (f *Fs) list(ctx context.Context, opt listOpt, fn listFn) error {
 					isDirectory = false
 				} else {
 					// Don't insert the root directory
-					if remote == opt.directory {
+					if remote == f.opt.Enc.ToStandardPath(opt.directory) {
 						continue
 					}
 				}
@@ -5422,7 +5422,7 @@ func (f *Fs) headObject(ctx context.Context, req *s3.HeadObjectInput) (resp *s3.
 	})
 	if err != nil {
 		if awsErr, ok := err.(awserr.RequestFailure); ok {
-			if awsErr.StatusCode() == http.StatusNotFound {
+			if awsErr.StatusCode() == http.StatusNotFound || awsErr.StatusCode() == http.StatusMethodNotAllowed {
 				return nil, fs.ErrorObjectNotFound
 			}
 		}

@@ -861,3 +861,9 @@ put them back in again.` >}}
   * Bruno Fernandes <54373093+folkzb@users.noreply.github.com>
   * Thomas Schneider <tspam.github@brainfuck.space>
   * Charles Hamilton <52973156+chamilton-ccn@users.noreply.github.com>
+  * Tomasz Melcer <tomasz@melcer.pl>
+  * Michał Dzienisiewicz <michal.piotr.dz@gmail.com>
+  * Florian Klink <flokli@flokli.de>
+  * Bill Fraser <bill@wfraser.dev>
+  * Thearas <thearas850@gmail.com>
+  * Filipe Herculano <fifo_@live.com>
